@@ -25,5 +25,6 @@ class LoadDb{
         val notebook1 = Notebook(0, "Biljeznica 1", "bilj 1", listOf(sec))
         val notebook2 = Notebook(0, "Notebook 2", "notes 2", listOf(sec))
         log.info("Preloading " + notebookRepo.saveAll(listOf(notebook1, notebook2)))
+        println("bla")
     }
 }
