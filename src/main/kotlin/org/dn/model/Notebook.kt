@@ -8,14 +8,16 @@ data class Notebook(
         @GeneratedValue
        val id: Long = 0L,
         var name: String = "",
-        var desc: String = "",
-        @ManyToMany
-        var sections: List<Section>
+        var desc: String = ""
 )
 @Entity
 data class Section(
         @Id
         @GeneratedValue
         val id: Long = 0L,
-        var text: String
+        var text: String,
+        @ManyToOne
+        var notebook: Notebook
 )
+
+data class NotebookFull(var notebook: Notebook, var sections: List<Section>)
