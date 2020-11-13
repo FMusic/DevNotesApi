@@ -9,3 +9,5 @@ class DevnotesapiApplication
 fun main(args: Array<String>) {
 	runApplication<DevnotesapiApplication>(*args)
 }
+
+
