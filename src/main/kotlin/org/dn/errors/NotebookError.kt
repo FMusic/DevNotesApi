@@ -19,3 +19,15 @@ class NotebookNotFoundAdvice{
         return ex.message.toString()
     }
 }
+
+class SectionNotFoundException(id: Long) : RuntimeException("Could not find section $id"){}
+
+@ControllerAdvice
+class SectionNotFoundAdvice{
+    @ResponseBody
+    @ExceptionHandler(value = [(SectionNotFoundException::class)])
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    fun sectionNotFoundHandler(ex: SectionNotFoundException): String{
+        return ex.message.toString()
+    }
+}

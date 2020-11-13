@@ -1,6 +1,7 @@
 package org.dn.controllers
 
 import org.dn.errors.NotebookNotFoundException
+import org.dn.errors.SectionNotFoundException
 import org.dn.model.Notebook
 import org.dn.model.NotebookFull
 import org.dn.model.Section
@@ -42,7 +43,7 @@ class NotebookController(var notebookRepository: NotebookRepository, var section
      * Updates or creates new notebook
      */
     @PutMapping ("/notebooks/{id}")
-    fun replaceEmployee(@RequestBody notebook: Notebook, @PathVariable id:Long): Notebook{
+    fun updateNotebook(@RequestBody notebook: Notebook, @PathVariable id:Long): Notebook{
         return this.notebookRepository.findById(id).map {
             it.desc = notebook.desc
             it.name = notebook.name
@@ -58,7 +59,26 @@ class NotebookController(var notebookRepository: NotebookRepository, var section
         notebookRepository.deleteById(id)
     }
 
-    fun TODOS(){
-        TODO("Sections controller")
-    }
+    /**
+     * Add new section
+     */
+    @PostMapping("/sections")
+    fun newSection(@RequestBody section: Section) : Section = sectionRepository.save(section)
+
+    /**
+     * update text and notebook in section
+     */
+    @PutMapping("/sections/{id}")
+    fun updateSection(@RequestBody section: Section, @PathVariable id: Long): Section =
+            sectionRepository.findById(id).map {
+                it.text = section.text
+                it.notebook = section.notebook
+                sectionRepository.save(it)
+            }.orElseThrow { SectionNotFoundException(id) }
+
+    /**
+     * delete section by it's id
+     */
+    @DeleteMapping("/sections/{id}")
+    fun deleteSection(@PathVariable id:Long) = notebookRepository.deleteById(id)
 }
