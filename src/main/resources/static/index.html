@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>DevNotes</title>
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="mdb.min.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script type="text/javascript" src="jquery.min.js"></script>
+</head>
+
+<body onload="loadNotebooks()">
+
+<div>
+    <!-- menu -->
+</div>
+
+<div style="height: 100vh;">
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+            Notebooks
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="notebooks">
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                Sections
+                <ul class="list-group" id="sections">
+                </ul>
+            </div>
+            <div class="col-sm-9">
+                <div contenteditable="true" class="" id="section-text">
+                    Section text
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SCRIPTS -->
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="mdb.min.js"></script>
+<script type="text/javascript" src="communicate.js"></script>
+</body>
+
+</html>

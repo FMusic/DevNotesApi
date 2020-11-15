@@ -15,6 +15,7 @@ data class Section(
         @Id
         @GeneratedValue
         val id: Long = 0L,
+        val name: String = "",
         var text: String,
         @ManyToOne
         var notebook: Notebook

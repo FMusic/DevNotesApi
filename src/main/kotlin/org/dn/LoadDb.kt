@@ -14,7 +14,7 @@ class LoadDb {
 
     companion object SectionObj {
         var note = Notebook(0, "Notebook1", "Notebook example")
-        var sec = Section(0, "Example Section ", note)
+        var sec = Section(0, "Example Section ", "Section 1", note)
     }
 
     @Bean
