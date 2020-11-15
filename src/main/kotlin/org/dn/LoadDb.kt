@@ -2,8 +2,6 @@ package org.dn
 
 import org.dn.model.Notebook
 import org.dn.model.Section
-import org.dn.repos.NotebookRepository
-import org.dn.repos.SectionRepository
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.boot.CommandLineRunner

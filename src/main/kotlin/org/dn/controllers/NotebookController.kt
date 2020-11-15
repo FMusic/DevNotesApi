@@ -5,8 +5,8 @@ import org.dn.errors.SectionNotFoundException
 import org.dn.model.Notebook
 import org.dn.model.NotebookFull
 import org.dn.model.Section
-import org.dn.repos.NotebookRepository
-import org.dn.repos.SectionRepository
+import org.dn.NotebookRepository
+import org.dn.SectionRepository
 import org.springframework.web.bind.annotation.*
 import java.util.stream.Collectors
 
