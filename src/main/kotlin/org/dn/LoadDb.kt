@@ -14,7 +14,8 @@ class LoadDb {
 
     companion object SectionObj {
         var note = Notebook(0, "Notebook1", "Notebook example")
-        var sec = Section(0, "Example Section ", "Section 1", note)
+        const val exTextJson = "{\"document\":[{\"text\":[{\"type\":\"string\",\"attributes\":{},\"string\":\"ExampleSection\"},{\"type\":\"string\",\"attributes\":{\"blockBreak\":true},\"string\":\"\\n\"}],\"attributes\":[]}],\"selectedRange\":[14,14]}"
+        var sec = Section(0, "Example Section ", exTextJson, note)
     }
 
     @Bean
